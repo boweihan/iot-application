@@ -100,4 +100,4 @@ const bootstrap = async () => {
   console.log(`Application is running on: ${await app.getUrl()}`);
 };
 
-bootstrap();
+bootstrap().catch((e) => console.log(e));

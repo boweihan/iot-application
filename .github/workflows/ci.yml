@@ -2,7 +2,7 @@ name: Deploy IoT Application Client
 
 on:
   push:
-    branches: [ "deploy" ]
+    branches: [ "main" ]
 
   workflow_dispatch:
 
@@ -28,3 +28,9 @@ jobs:
 
       - name: test
         run: pnpm run test
+
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@4.1.5
+        with:
+          branch: iot-application-client-cd
+          folder: apps/client/dist
